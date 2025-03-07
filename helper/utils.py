@@ -19,7 +19,7 @@ def generate_script(prompt):
     message = HumanMessage(content=prompt)
 
     # Generate a response using the chat model
-    response = chat([message])
+    response = chat.invoke([message])  # Use invoke instead of __call__
 
     # Return the generated text
     return response.content

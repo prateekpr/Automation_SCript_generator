@@ -7,33 +7,34 @@
 
 body {
     font-family: 'Roboto Mono', monospace;
-    background-color: #0d0d0d;
     color: #e0e0e0;
     line-height: 1.6;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    padding: 20px;
+    background: #000; /* Black background */
+    overflow-y: auto; /* Enable vertical scrolling */
 }
 
 .container {
     width: 100%;
-    max-width: 800px;
-    margin: 0 auto;
+    max-width: 1200px;
+    padding: 20px;
+    text-align: center;
 }
 
 header {
-    text-align: center;
     margin-bottom: 2rem;
 }
 
 header h1 {
     font-family: 'Orbitron', sans-serif;
-    font-size: 2.5rem;
-    color: #00ffcc;
-    text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc;
+    font-size: 3rem;
+    color: #9d4cff; /* Neon purple */
+    text-shadow: 0 0 10px #9d4cff, 0 0 20px #9d4cff;
     margin-bottom: 0.5rem;
+    animation: glow 3s infinite, float 4s ease-in-out infinite;
 }
 
 header p {
@@ -42,31 +43,39 @@ header p {
 }
 
 .card {
-    background: #1a1a1a;
-    border-radius: 10px;
+    background: rgba(23, 23, 23, 0.8); /* Darker card background */
+    border-radius: 15px;
     padding: 20px;
     margin-bottom: 20px;
-    box-shadow: 0 4px 15px rgba(0, 255, 204, 0.1);
-    border: 1px solid #333;
+    box-shadow: 0 4px 20px rgba(157, 76, 255, 0.2); /* Neon purple shadow */
+    border: 1px solid rgba(157, 76, 255, 0.1); /* Neon purple border */
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(157, 76, 255, 0.4); /* Neon purple hover shadow */
 }
 
 .upload-label {
     display: block;
     text-align: center;
     padding: 20px;
-    background: #262626;
+    background: rgba(38, 38, 38, 0.8); /* Darker upload label background */
     border-radius: 10px;
     cursor: pointer;
-    transition: background 0.3s ease;
+    transition: background 0.3s ease, transform 0.3s ease;
 }
 
 .upload-label:hover {
-    background: #333;
+    background: rgba(51, 51, 51, 0.8); /* Darker hover background */
+    transform: scale(1.02);
 }
 
 .upload-label span {
     font-size: 1.2rem;
-    color: #00ffcc;
+    color: #9d4cff; /* Neon purple */
 }
 
 .upload-label input[type="file"] {
@@ -78,8 +87,8 @@ header p {
     width: 100%;
     padding: 10px;
     font-size: 1.1rem;
-    color: #0d0d0d;
-    background: #00ffcc;
+    color: #000; /* Black text */
+    background: linear-gradient(135deg, #9d4cff, #7c3aed); /* Neon purple gradient */
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -88,7 +97,7 @@ header p {
 }
 
 .btn-upload:hover, .btn-generate:hover {
-    background: #00e6b8;
+    background: linear-gradient(135deg, #7c3aed, #6a2fc2); /* Darker neon purple gradient */
     transform: translateY(-2px);
 }
 
@@ -97,16 +106,17 @@ header p {
     padding: 10px;
     font-size: 1rem;
     color: #e0e0e0;
-    background: #262626;
-    border: 1px solid #333;
+    background: rgba(38, 38, 38, 0.8); /* Darker select background */
+    border: 1px solid rgba(157, 76, 255, 0.3); /* Neon purple border */
     border-radius: 5px;
     margin-bottom: 10px;
-    transition: border-color 0.3s ease;
+    transition: border-color 0.3s ease, transform 0.3s ease;
 }
 
 .select-framework:focus {
-    border-color: #00ffcc;
+    border-color: #9d4cff; /* Neon purple focus border */
     outline: none;
+    transform: scale(1.02);
 }
 
 .output-card {
@@ -114,8 +124,8 @@ header p {
 }
 
 #output {
-    background: #262626;
-    color: #00ffcc;
+    background: rgba(38, 38, 38, 0.8); /* Darker output background */
+    color: #9d4cff; /* Neon purple text */
     padding: 15px;
     border-radius: 5px;
     font-family: 'Roboto Mono', monospace;
@@ -123,22 +133,30 @@ header p {
     white-space: pre-wrap;
     word-wrap: break-word;
     overflow-x: auto;
-    border: 1px solid #333;
+    border: 1px solid rgba(157, 76, 255, 0.3); /* Neon purple border */
 }
 
 /* Animations */
 @keyframes glow {
     0% {
-        box-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc;
+        text-shadow: 0 0 10px #9d4cff, 0 0 20px #9d4cff;
     }
     50% {
-        box-shadow: 0 0 20px #00ffcc, 0 0 40px #00ffcc;
+        text-shadow: 0 0 20px #9d4cff, 0 0 40px #9d4cff;
     }
     100% {
-        box-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc;
+        text-shadow: 0 0 10px #9d4cff, 0 0 20px #9d4cff;
     }
 }
 
-header h1 {
-    animation: glow 3s infinite;
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
 }
