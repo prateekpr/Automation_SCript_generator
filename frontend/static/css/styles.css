@@ -1,0 +1,144 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto Mono', monospace;
+    background-color: #0d0d0d;
+    color: #e0e0e0;
+    line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+header h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.5rem;
+    color: #00ffcc;
+    text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc;
+    margin-bottom: 0.5rem;
+}
+
+header p {
+    font-size: 1.1rem;
+    color: #b3b3b3;
+}
+
+.card {
+    background: #1a1a1a;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 15px rgba(0, 255, 204, 0.1);
+    border: 1px solid #333;
+}
+
+.upload-label {
+    display: block;
+    text-align: center;
+    padding: 20px;
+    background: #262626;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.upload-label:hover {
+    background: #333;
+}
+
+.upload-label span {
+    font-size: 1.2rem;
+    color: #00ffcc;
+}
+
+.upload-label input[type="file"] {
+    display: none;
+}
+
+.btn-upload, .btn-generate {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 1.1rem;
+    color: #0d0d0d;
+    background: #00ffcc;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+    margin-top: 10px;
+}
+
+.btn-upload:hover, .btn-generate:hover {
+    background: #00e6b8;
+    transform: translateY(-2px);
+}
+
+.select-framework {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    color: #e0e0e0;
+    background: #262626;
+    border: 1px solid #333;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    transition: border-color 0.3s ease;
+}
+
+.select-framework:focus {
+    border-color: #00ffcc;
+    outline: none;
+}
+
+.output-card {
+    display: none;
+}
+
+#output {
+    background: #262626;
+    color: #00ffcc;
+    padding: 15px;
+    border-radius: 5px;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 0.9rem;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    overflow-x: auto;
+    border: 1px solid #333;
+}
+
+/* Animations */
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc;
+    }
+    50% {
+        box-shadow: 0 0 20px #00ffcc, 0 0 40px #00ffcc;
+    }
+    100% {
+        box-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc;
+    }
+}
+
+header h1 {
+    animation: glow 3s infinite;
+}

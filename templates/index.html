@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Script Generator</title>
+    <!-- Link to CSS file -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <!-- Google Fonts for Futuristic Design -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+    <!-- Animate.css for Advanced Animations -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+</head>
+<body>
+    <div class="container">
+        <header class="animate__animated animate__fadeInDown">
+            <h1>Test Script Generator</h1>
+            <p>Generate test scripts for your favorite frameworks with ease.</p>
+        </header>
+
+        <main>
+            <form id="uploadForm" class="card animate__animated animate__fadeInUp">
+                <label for="file" class="upload-label">
+                    <span>📁 Upload CSV File</span>
+                    <input type="file" id="file" name="file" accept=".csv" required>
+                </label>
+                <button type="submit" class="btn-upload">Upload</button>
+            </form>
+
+            <div id="frameworkSelection" class="card animate__animated animate__fadeInUp" style="display: none;">
+                <label for="framework">Select Framework:</label>
+                <select id="framework" class="select-framework">
+                    <option value="Java Selenium">Java Selenium</option>
+                    <option value="Java Appium">Java Appium</option>
+                    <option value="Playwright TypeScript">Playwright TypeScript</option>
+                </select>
+                <button id="generateButton" class="btn-generate">Generate Scripts</button>
+            </div>
+
+            <div id="outputContainer" class="card output-card animate__animated animate__fadeInUp" style="display: none;">
+                <h2>Generated Scripts</h2>
+                <pre id="output"></pre>
+            </div>
+        </main>
+    </div>
+
+    <!-- Link to JavaScript file -->
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
